@@ -12,7 +12,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #FF0F00
+    color: #356A9A
 }
 
 a:hover {
@@ -168,15 +168,24 @@ hr {
     font-style: italic
 }
 
-.content .profile-picture {
-    width: 130px;
-    height: auto;
-    max-width: 100%;
-    aspect-ratio: auto;
-    position: relative;
-    margin: -10px 0 0 15px;
+.content .profile-sidebar {
     float: right;
-    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 150px;
+    margin: -10px 0 15px 20px;
+}
+
+.content .profile-picture {
+    display: block;
+    width: 130px;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    float: none;
+    object-fit: contain;
 }
 
 
@@ -235,4 +244,58 @@ table tr th :first-child,table tr td :first-child {
 
 table tr th :last-child,table tr td :last-child {
     margin: 0
+}
+
+
+.content webring {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+    max-width: 12em;
+    margin: 0;
+    border: double thick #356A9A;
+    border-radius: 1.25em;
+    overflow: hidden;
+}
+
+.content webring a {
+    flex: 1 1 0;
+    width: auto;
+    padding: 5px 0;
+    color: #356A9A;
+    text-align: center;
+    text-decoration: none;
+}
+
+.content webring a:hover {
+    background: #E8F0F7;
+}
+
+.content webring a:visited {
+    color: #356A9A;
+}
+
+.content webring a.back {
+    margin-right: 0;
+    border-right: dashed thin #356A9A;
+    border-radius: 1.25em 0 0 1.25em;
+}
+
+.content webring a.forward {
+    margin-left: 0;
+    border-left: dashed thin #356A9A;
+    border-radius: 0 1.25em 1.25em 0;
+}
+
+@media (max-width: 480px) {
+    .content .profile-sidebar {
+        width: 125px;
+        margin-left: 15px;
+    }
+
+    .content .profile-picture {
+        width: 115px;
+    }
 }
